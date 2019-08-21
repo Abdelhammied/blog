@@ -11,7 +11,7 @@
 
     @include('web.layouts.includes.navbar')
 
-    @include('web.layouts.includes.page-header')
+    @include('web.layouts.includes.page_header')
 
     <div class="container">
         <div class="row">
