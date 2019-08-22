@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\User;
-
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class UserController extends Controller
+class PostController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +14,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('admin.users.index', [
-            'users' => User::all()
-        ]);
+        //
     }
 
     /**
@@ -28,7 +24,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('admin.users.create');
+        //
     }
 
     /**
@@ -39,8 +35,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        User::create($request->only(['name', 'email', 'password']));
-        return redirect()->route('admin.users.index');
+        //
     }
 
     /**
@@ -49,9 +44,9 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(User $user)
+    public function show($id)
     {
-        return view('admin.users.show', compact('user'));
+        //
     }
 
     /**
@@ -60,9 +55,9 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(User $user)
+    public function edit($id)
     {
-        return view('admin.users.edit', compact('user'));
+        //
     }
 
     /**
@@ -72,10 +67,9 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request, $id)
     {
-        $user->update($request->only(['name', 'email']));
-        return redirect()->route('admin.users.index');
+        //
     }
 
     /**
@@ -84,9 +78,8 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(User $user)
+    public function destroy($id)
     {
-        $user->delete();
-        return redirect()->route('admin.users.index');
+        //
     }
 }
